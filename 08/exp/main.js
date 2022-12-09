@@ -2,10 +2,9 @@ const { ethers } = require("ethers");
 const { parseUnits } = require("ethers/lib/utils");
 const fs = require("fs");
 
-const apikey = "4tIczBvEFDOJk-3O0ya0PBwbXQhX7ECl"; // alchemy的api
-const private_key =
-  "418e62e7f126d7b5472a2b5d7c1c9989b1d2bc7cdef548783a0bb29f4832e608"; // metamask私钥
-  // 读取dapp
+const apikey = ""; // alchemy的api
+const private_key = ""; // metamask私钥
+// 读取dapp
 const accountlist = fs.readFileSync("./dapp.json", "utf-8");
 const account = JSON.parse(accountlist);
 
@@ -30,8 +29,6 @@ async function main() {
   const contract_address = await MyToken.address;
 
   console.log(`The contract address is ${contract_address}`);
-
-
 
   await (async () => {
     for (let index = 0; index < account.length; index++) {
